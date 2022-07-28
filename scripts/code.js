@@ -16,7 +16,7 @@ btnIngreso.addEventListener('click', (e) =>{
     var objUsuario = cuentas.find(obj => {return obj.usuario === usuarioIngresado.value});
     if(objUsuario){ 
       if( usuarioIngresado.value == objUsuario.usuario && constraseñaIngresada.value == objUsuario.contraseña ){
-        objUsuario = (({usuario, nombre, saldo}) => ({usuario, nombre, saldo}))(objUsuario); 
+        
         objUsuario.saldo = JSON.parse(localStorage.getItem(usuarioIngresado.value));
         localStorage.setItem("user" , JSON.stringify(objUsuario));
         window.location.href = "./profile.html";
